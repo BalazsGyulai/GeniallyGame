@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+.question{
+  text-align: center;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  font-size: 2.3em;
+}
+
 .guesses{
   width: 100%;
 }
@@ -25,22 +32,74 @@
   font-weight: bold;
   font-size: 1.5em;
   border-radius: 5px;
-}
-
-.lettergrey{
+  transition: 0.3s;
   background: #e4e4e4;
 }
 
 .lettergreen{
   background: #32cf79;
+  animation: rotategreen 2s ease-in;
 }
 
 .letteryellow{
   background: #F3A712;
+  animation: rotateyellow 2s ease-in;
 }
 
 .letterred{
   background: #9b9b9b;
+  animation: rotatered 2s ease-in;
+}
+
+@keyframes rotategreen {
+  0%{
+    transform: rotateX(0);
+    background: #e4e4e4;
+  }
+  
+  50%{
+    transform: rotateX(90deg);
+    background: #e4e4e4;
+  }
+
+  100%{
+    transform: rotateX(0);
+    background: #32cf79;
+  }
+}
+
+@keyframes rotateyellow {
+  0%{
+    transform: rotateX(0);
+    background: #e4e4e4;
+  }
+  
+  50%{
+    transform: rotateX(90deg);
+    background: #e4e4e4;
+  }
+
+  100%{
+    transform: rotateX(0);
+    background: #F3A712;
+  }
+}
+
+@keyframes rotatered {
+  0%{
+    transform: rotateX(0);
+    background: #e4e4e4;
+  }
+  
+  50%{
+    transform: rotateX(90deg);
+    background: #e4e4e4;
+  }
+
+  100%{
+    transform: rotateX(0);
+    background: #9b9b9b;
+  }
 }
 
 .keyboard{
@@ -69,24 +128,103 @@
   font-weight: bold;
   font-size: 1.3em;
   cursor: pointer;
-}
-
-.keyboardKey:hover{
-  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.300);
-}
-
-.keyboardKeygrey{
+  transition: 0.3s;
   background: #e4e4e4;
 }
 
+.keyboardKey:hover{
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.414);
+  transition: 0.3s;
+}
+
+.keyboardKeyeffect{
+  animation: clickeffect 0.5s;
+}
+
+@keyframes clickeffect {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.8);
+  }
+
+  100%{
+    transform: scale(1);
+  }
+}
+/* 
+.keyboardKeygrey{
+  background: #e4e4e4;
+  transition: 0.3s;
+} */
+
 .keyboardKeyyellow{
   background: #F3A712;
+  /* transition: 0.3s; */
+  animation: keyboardyelllow 2s ease-in;
 }
 
 .keyboardKeygreen{
   background: #32cf79;
+  /* transition: 0.3s; */
+  animation: keyboardgreen 2s ease-in;
 }
 
 .keyboardKeyred{
   background: #9b9b9b;
+  animation: keyboardgray 2s ease-in;
+  /* transition: 0.3s; */
+}
+
+@keyframes keyboardyelllow{
+  0%{
+    transform: rotateX(0);
+    background: #e4e4e4;
+  }
+  
+  50%{
+    transform: rotateX(90deg);
+    background: #e4e4e4;
+  }
+
+  100%{
+    transform: rotateX(0);
+    background: #F3A712;
+  }
+}
+
+@keyframes keyboardgreen{
+  0%{
+    transform: rotateX(0);
+    background: #e4e4e4;
+  }
+  
+  50%{
+    transform: rotateX(90deg);
+    background: #e4e4e4;
+  }
+
+  100%{
+    transform: rotateX(0);
+    background: #32cf79;
+  }
+}
+
+@keyframes keyboardgray{
+  0%{
+    transform: rotateX(0);
+    background: #e4e4e4;
+  }
+  
+  50%{
+    transform: rotateX(90deg);
+    background: #e4e4e4;
+  }
+
+  100%{
+    transform: rotateX(0);
+    background: #9b9b9b;
+  }
 }
